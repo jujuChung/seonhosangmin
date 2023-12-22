@@ -1,0 +1,45 @@
+.cover {
+    padding: 40px 60px;
+    background: #f8f8f8;
+}
+
+.coverImage {
+    width: calc(100vw - 120px);
+    height: calc(calc(100vw - 120px) / 0.68);
+    background: url('../images/studio1.jpeg') no-repeat;
+    background-size: 100%;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 768px;
+        margin: auto !important;
+    }
+
+    .coverImage {
+        width: calc(768px - 120px);
+        height: calc(calc(768px - 120px) / 0.68);
+    }
+}
+
+
+.coverTitle {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.coverTime {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.coverCaption {
+    font-size: 14px;
+    color: #a3a1a1;
+}
