@@ -1,0 +1,56 @@
+.infoCard {
+    background: var(--main-background-color);
+    width: calc(100% - 40px);
+    margin: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.infoCardTabs {
+    display: flex;
+    align-items: center;
+    font-size: var(--main-font-size);
+    height: 44px;
+    position: relative;
+    z-index: var(--zIndex-low);
+}
+
+.tab {
+    display: inline-flex;
+    width: calc(100% / 3);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab.active {
+    background: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid var(--third-border-color);
+    border-bottom: 1px solid white;
+}
+
+.infoCardBody {
+    padding: 20px 10px !important;
+    box-sizing: border-box;
+    border: 1px solid var(--third-border-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: var(--main-font-size);
+    background: white;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+.infoCardBody.activeFirstIndex {
+    border-top-left-radius: 0;
+}
+
+.infoCardBody.activeLastIndex {
+    border-top-right-radius: 0;
+}

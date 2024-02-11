@@ -1,21 +1,38 @@
-html {
-    text-align: center;
-    font-family: 'maru-buri';
+:root {
+    --main-text-color: #5a5a5a;
+    --secondary-text-color: #000000;
+    --third-text-color: #2b2222;
+    --red1-text-color: #c6472b;
+    --red2-text-color: #ea7664;
+    --main-border-color: #5a5a5a;
+    --secondary-border-color: #ebebeb;
+    --third-border-color: #ddd;
+    --main-background-color: #f9f9f9;
+    --secondary-background-color: #858585;
+    --bridegroom-color: #668eaa;
+    --bride-color: #ce8383;
+    --zIndex-low: 10;
+    --zIndex-middle: 20;
+    --zIndex-high: 30;
+    --main-font-size: 14px;
 }
 
-body {
+html, body {
+    text-align: center;
+    color: var(--main-text-color);
+
     width: 100vw;
+    background: dimgray;
     margin: 0 !important;
     padding: 0 !important;
 }
 
 section {
-    margin-bottom: 40px;
+    padding-bottom: 60px;
 }
 
-@font-face {
-    font-family: 'maru-buri';
-    font-style: normal;
+h3 {
     font-weight: normal;
-    src: url("../MaruBuri-Regular.otf");
+    font-size: 16px;
+    margin: 25px 0;
 }

@@ -1,0 +1,59 @@
+.locationTitle {
+    font-size: 16px;
+    padding: 12px 0 8px;
+}
+
+.locationCaption {
+    font-size: 16px;
+    opacity: 0.6;
+    padding: 10px;
+}
+
+.transportInfo {
+    font-size: var(--main-font-size);
+    text-align: left;
+    padding: 0 20px 60px 20px;
+}
+
+.transportInfo ul {
+    padding: 0;
+}
+
+.transportInfo li {
+    list-style: none;
+    line-height: 24px;
+    padding-left: 4px;
+}
+
+.transportInfo li + li {
+    margin-top: 10px;
+}
+
+.transportInfoCaption {
+    opacity: 0.8;
+}
+
+.transportInfoTitle {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.subway {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin-right: 6px;
+}
+
+.subwayLine1 {
+    background: darkblue;
+}
+
+.subwayLine7 {
+    background: darkolivegreen;
+}
+
+.subwayLineSinlim {
+    background: steelblue;
+}

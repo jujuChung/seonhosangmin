@@ -1,0 +1,32 @@
+.contactImage {
+    width: 100%;
+    height: 256px;
+    background: url('../images/contact.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contactInfo {
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.contactInfo > span {
+    white-space: break-spaces;
+}
+
+.contactRelation {
+    font-size: var(--main-font-size);
+    color: darkgray;
+}
+
+.contactButton {
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid var(--main-border-color);
+    background: white;
+    padding: 8px 40px;
+    margin-top: 30px;
+}

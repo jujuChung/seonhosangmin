@@ -1,0 +1,30 @@
+.greetingsDivider {
+    display: inline-block;
+    margin: 0 1px;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: gainsboro;
+    transform: rotate(45deg);
+    vertical-align: middle;
+}
+
+.greetingsDivider:nth-child(2) {
+    background: darkgray;
+}
+
+.greetings {
+    margin-top: 20px;
+    line-height: 2.5;
+    font-size: var(--main-font-size);
+}
+
+.greetingsEmphasis {
+    color: darkgoldenrod;
+}
+
+.greetingsTitle {
+    padding-top: 20px;
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
