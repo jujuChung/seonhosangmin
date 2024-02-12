@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 갤러리 cdn -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
     <title>정선호, 한상민 모바일 청첩장</title>
 </head>
 <body>
@@ -254,6 +254,10 @@
     <!-- 갤러리 -->
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
         <h3>갤러리</h3>
+        <div id="galleryContainer" class="galleryContainer"></div>
+        <button class="galleryMoreButton" onclick="handleClickGalleryMore()"><span class="galleryMoreIcon"></span>사진 더
+            보기
+        </button>
     </section>
 
     <!-- 지도 -->
@@ -530,6 +534,35 @@
         activeTab.classList.remove('active');
         target.classList.add('active');
         swiper.slideTo(index);
+    }
+
+    // 갤러리 세팅
+    const galleryContainer = document.getElementById('galleryContainer');
+    const PREVIEW_COUNT = 9;
+    for (let i = 0; i < 56; i++) {
+        const wrappingElement = document.createElement('a');
+        const imgElement = document.createElement('img');
+        const src = './images/image' + (i + 1) + '.jpg';
+
+        imgElement.src = src;
+        imgElement.alt = 'image' + (i + 1);
+        imgElement.className = 'galleryImg';
+        imgElement.setAttribute('loading', 'lazy');
+        wrappingElement.appendChild(imgElement);
+
+        wrappingElement.href = src;
+        wrappingElement.setAttribute('data-fslightbox', 'gallery');
+        if (i >= PREVIEW_COUNT) wrappingElement.className = 'hide';
+        galleryContainer.appendChild(wrappingElement);
+    }
+    refreshFsLightbox();
+
+    //  갤러리 더보기
+    function handleClickGalleryMore() {
+        const hideImages = document.querySelectorAll('a.hide[data-fslightbox="gallery"]');
+        hideImages.forEach(image => {
+            image.classList.remove('hide');
+        })
     }
 </script>
 </body>

@@ -1,0 +1,59 @@
+.galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+
+.galleryImg {
+    display: block;
+    padding: 5px;
+    box-sizing: border-box;
+    width: calc(calc(100vw - 60px) / 3);
+    height: calc(calc(100vw - 60px) / 3);
+    object-fit: cover;
+}
+
+a[data-fslightbox="gallery"].hide {
+    display: none;
+}
+
+.galleryMoreButton {
+    background: white;
+    border: 1px solid var(--main-border-color);
+    color: var(--main-text-color);
+    padding: 8px 30px;
+    border-radius: 32px;
+    font-size: 14px;
+}
+
+.galleryMoreIcon {
+    background: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='32.000000pt' height='32.000000pt' viewBox='0 0 32.000000 32.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cg transform='translate(0.000000,32.000000) scale(0.100000,-0.100000)'%0Afill='%235a5a5a' stroke='none'%3E%3Cpath d='M12 242 c49 -68 142 -182 148 -182 4 0 36 37 71 82 97 124 93 118 72%0A118 -11 0 -42 -31 -77 -75 -32 -41 -62 -75 -66 -75 -4 0 -34 34 -66 75 -35 44%0A-66 75 -77 75 -16 0 -16 -2 -5 -18z'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat;
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+.fslightbox-toolbar-button[title~="fullscreen"],
+.fslightbox-slide-number-container {
+    display: none !important;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(3px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(3px);
+        opacity: 0;
+    }
+}
