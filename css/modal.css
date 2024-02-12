@@ -21,7 +21,7 @@
     position: absolute;
     top: 205px;
     left: 20px;
-    width: 320px;
+    width: calc(100% - 40px);
     height: auto;
 }
 

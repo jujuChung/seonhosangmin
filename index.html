@@ -29,10 +29,16 @@
     <!-- 갤러리 cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
     <!-- 네이버맵 -->
-    dy>
     <script type="text/javascript"
             src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=i4phjztpvg&callback=initMap"></script>
+    <!-- 카카오네비 -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
+            integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8"
+            crossorigin="anonymous"></script>
     <title>정선호, 한상민 모바일 청첩장</title>
+    <script type="text/javascript">
+        Kakao.init('d8e092c40d0f32d70fde16010eaf7fc5');
+    </script>
 </head>
 <body>
 <div class="card">
@@ -271,6 +277,20 @@
         <div class="locationTitle">해군호텔w웨딩홀 본관 2층 노블레스홀</div>
         <div class="locationCaption">서울특별시 영등포구 가마산로 538</div>
         <div id="map" class="map"></div>
+        <div class="mapButtons">
+            <button class="mapButton" onclick="openNaverMap()">
+                <span class="mapIcon naverMap"></span>
+                네이버지도
+            </button>
+            <button class="mapButton" id="start-navigation" onclick="openKakaoNavi()">
+                <span class="mapIcon kakaoNavi"></span>
+                카카오내비
+            </button>
+            <button class="mapButton" onclick="openTMap()">
+                <span class="mapIcon tmap"></span>
+                티맵
+            </button>
+        </div>
     </section>
     <section class="transportInfo">
         <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
@@ -519,10 +539,16 @@
         });
     }
 
-
-    const paginationText = ['포토부스', '식사안내', '주차안내'];
     const swiper = new Swiper('.swiper', {
         autoHeight: true,
+    });
+
+    swiper.on('slideChangeTransitionEnd', function () {
+        const activeIndex = swiper.activeIndex;
+        const tabs = document.querySelectorAll('.tab');
+        const activeTab = document.querySelector('.tab.active');
+        activeTab?.classList.remove('active');
+        tabs[activeIndex]?.classList.add('active');
     });
 
     function handleClickInfoTab() {
@@ -582,18 +608,38 @@
 
     // 네이버지도 init
     var map = null;
+    const LAT = 37.5037856;
+    const LNG = 126.9160236;
+    const PLACE = encodeURI('해군호텔W웨딩홀');
 
     function initMap() {
-        const LAT = 37.5037856;
-        const LNG = 126.9160236;
         map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(LAT, LNG),
-            zoom: 15
+            zoom: 15,
+            scaleControl: false,
         });
         new naver.maps.Marker({
             position: new naver.maps.LatLng(LAT, LNG),
             map: map
         });
+    }
+
+
+    function openNaverMap() {
+        window.open('nmap://search?zoom=15&query=' + PLACE);
+    }
+
+    function openKakaoNavi() {
+        Kakao.Navi.start({
+            name: '해군호텔W웨딩홀',
+            x: LNG,
+            y: LAT,
+            coordType: 'wgs84',
+        });
+    }
+
+    function openTMap() {
+        window.open('tmap://route?goalx=' + LNG + '&goaly=' + LAT + '&goalname=' + PLACE);
     }
 </script>
 </body>

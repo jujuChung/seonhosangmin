@@ -34,8 +34,6 @@
 }
 
 .infoCardBody {
-    padding: 20px 10px !important;
-    box-sizing: border-box;
     border: 1px solid var(--third-border-color);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -45,6 +43,11 @@
     background: white;
     line-height: 24px;
     font-weight: 300;
+}
+
+.swiper-slide{
+    padding: 20px 10px !important;
+    box-sizing: border-box;
 }
 
 .infoCardBody.activeFirstIndex {
