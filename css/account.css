@@ -52,6 +52,7 @@
     margin: 0 10px;
     text-align: left;
     font-size: var(--main-font-size);
+    text-decoration: none;
 }
 
 .accountAccordionRow > div + div {

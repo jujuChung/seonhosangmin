@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- og tag -->
     <meta property="og:title" content="상민·선호의 결혼식에 초대합니다"/>
-    <meta property="og:description" content="2024년 4월 13일 12시30분"/>
+    <meta property="og:description" content="4월 13일 12시30분"/>
     <meta property="og:image" content="./images/cover.jpeg"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/cover.css"/>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/map.css"/>
     <link rel="stylesheet" href="css/transport.css"/>
     <link rel="stylesheet" href="css/info.css"/>
+    <link rel="stylesheet" href="css/share.css"/>
     <!-- 스크롤 애니메이션 cdn -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -462,13 +463,25 @@
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
         <h3>방명록</h3>
     </section>
+
+    <!-- 공유,링크 복사 -->
+    <section class="shareContainer" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+        <div class="shareRow" onclick="shareKakaoTalk()">
+            <span class="shareIcon shareKakaoTalk"></span>
+            카카오톡 공유하기
+        </div>
+        <div class="shareRow" onclick="copyLink()">
+            <span class="shareIcon shareLink"></span>
+            링크주소 복사하기
+        </div>
+    </section>
 </div>
 
 <script type="text/javascript">
     // 스크롤 애니메이션 init
-    AOS.init();
+    AOS?.init();
 
-    moment().locale('ko');
+    moment()?.locale('ko');
 
     // 카운트다운 함수
     function countDown() {
@@ -626,11 +639,11 @@
 
 
     function openNaverMap() {
-        window.open('nmap://search?zoom=15&query=' + PLACE);
+        location.href = 'nmap://search?zoom=15&query=' + PLACE;
     }
 
     function openKakaoNavi() {
-        Kakao.Navi.start({
+        Kakao?.Navi.start({
             name: '해군호텔W웨딩홀',
             x: LNG,
             y: LAT,
@@ -639,7 +652,28 @@
     }
 
     function openTMap() {
-        window.open('tmap://route?goalx=' + LNG + '&goaly=' + LAT + '&goalname=' + PLACE);
+        location.href = 'tmap://route?goalx=' + LNG + '&goaly=' + LAT + '&goalname=' + PLACE;
+    }
+
+    const LINK = 'https://seonhosangmin.github.io/wedding-card/';
+    function copyLink() {
+        navigator.clipboard.writeText(LINK).then(() => {
+            alert('주소가 복사되었습니다.');
+        }).catch(err => {
+            console.log('Something went wrong', err);
+        });
+    }
+
+    function shareKakaoTalk() {
+        Kakao?.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '상민·선호의 결혼식에 초대합니다',
+                imageUrl: 'https://seonhosangmin.github.io/wedding-card/images/cover.jpeg',
+                link: {mobileWebUrl: LINK, webUrl: LINK},
+                description: '4월 13일 12시30분',
+            }
+        });
     }
 </script>
 </body>
