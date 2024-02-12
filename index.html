@@ -4,8 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- og tag -->
     <meta property="og:title" content="상민·선호의 결혼식에 초대합니다"/>
-    <meta property="og:description" content="4월 13일 12시30분"/>
+    <meta property="og:description" content="4월 13일 12시 30분 | 해군호텔w웨딩홀 본관 2층 노블레스홀"/>
     <meta property="og:image" content="./images/cover.jpeg"/>
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/cover.css"/>
     <link rel="stylesheet" href="css/greetings.css"/>
@@ -292,6 +293,7 @@
                 티맵
             </button>
         </div>
+        <div class="mapNotice">* 길찾기에 사용하시려는 앱(네이버지도 | 카카오내비 | 티맵)의 설치가 필요합니다.</div>
     </section>
     <section class="transportInfo">
         <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
@@ -656,6 +658,7 @@
     }
 
     const LINK = 'https://seonhosangmin.github.io/wedding-card/';
+
     function copyLink() {
         navigator.clipboard.writeText(LINK).then(() => {
             alert('주소가 복사되었습니다.');
@@ -671,7 +674,7 @@
                 title: '상민·선호의 결혼식에 초대합니다',
                 imageUrl: 'https://seonhosangmin.github.io/wedding-card/images/cover.jpeg',
                 link: {mobileWebUrl: LINK, webUrl: LINK},
-                description: '4월 13일 12시30분',
+                description: '4월 13일 12시 30분\n해군호텔w웨딩홀 본관 2층 노블레스홀',
             }
         });
     }
