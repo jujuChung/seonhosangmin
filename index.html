@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/calendar.css"/>
     <link rel="stylesheet" href="css/gallery.css"/>
     <link rel="stylesheet" href="css/account.css"/>
+    <link rel="stylesheet" href="css/map.css"/>
     <link rel="stylesheet" href="css/transport.css"/>
     <link rel="stylesheet" href="css/info.css"/>
     <!-- 스크롤 애니메이션 cdn -->
@@ -27,6 +28,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 갤러리 cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+    <!-- 네이버맵 -->
+    dy>
+    <script type="text/javascript"
+            src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=i4phjztpvg&callback=initMap"></script>
     <title>정선호, 한상민 모바일 청첩장</title>
 </head>
 <body>
@@ -46,7 +51,7 @@
                 <span class="name">정선호</span>
             </div>
             <div class="fullDate">2024.04.13. SAT 12:30 PM</div>
-            <div class="location">해군호텔 W웨딩홀</div>
+            <div class="location">해군호텔W웨딩홀 본관 2층 노블레스홀</div>
         </div>
     </section>
 
@@ -263,60 +268,67 @@
     <!-- 지도 -->
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
         <h3>오시는 길</h3>
-        <div class="locationTitle">해군호텔 w웨딩홀</div>
+        <div class="locationTitle">해군호텔w웨딩홀 본관 2층 노블레스홀</div>
         <div class="locationCaption">서울특별시 영등포구 가마산로 538</div>
+        <div id="map" class="map"></div>
     </section>
-    <section class="transportInfo" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
-        <div class="transportInfoTitle">🚊&nbsp;지하철</div>
-        <ul>
-            <li>
-                <span class="subway subwayLine1"></span>
-                1호선 대방역
-                <div class="transportInfoCaption">대방역 07번 마을버스, 서울해군호텔 하차</div>
-            </li>
-            <li>
-                <span class="subway subwayLine7"></span>
-                7호선 신풍역
-                <div class="transportInfoCaption">3번 출구 6654번 버스, 서울해군호텔 하차</div>
-            </li>
-            <li>
-                <span class="subway subwayLine7"></span>
-                7호선 보라매역
-                <div class="transportInfoCaption">5번 출구에서 도보로 약 15분 소요</div>
-            </li>
-            <li>
-                <span class="subway subwayLineSinlim"></span>
-                신림선 서울지방병무청역
-                <div class="transportInfoCaption">2번 출구에서 도보로 약 15분 소요</div>
-            </li>
-        </ul>
-        <div class="transportInfoTitle">🚌&nbsp;버스</div>
-        <ul>
-            <li>강남중학교 버스정류장 하차 후 메가커피 방향으로 횡단보도 건너 직진 500m<br/>
-            </li>
-        </ul>
-        <div class="transportInfoTitle">🚌&nbsp;무료 셔틀버스</div>
-        <ul>
-            <li>
-                예식 손님 전용 셔틀버스를 운영합니다.
-            </li>
-            <li>운영 장소
-                <div class="transportInfoCaption">1호선 대방역3번출구 / 7호선 보라매역 5번출구</div>
-            </li>
-            <li>운행 간격
-                <div class="transportInfoCaption">예식시간 1시간30분 전부터 10분-15분간격 운행</div>
-            </li>
-            <li>차량 정보
-                <div class="transportInfoCaption">해군호텔W웨딩홀이라고 붙여놓은 셔틀 버스</div>
-            </li>
-        </ul>
-        <div class="transportInfoTitle">🅿️&nbsp;주차</div>
-        <ul>
-            <li>
-                예식장 건물 내 2시간 무료 주차가 가능합니다.<br/>
-                안내데스크에서 <b><u>주차권</u></b>을 수령할 수 있습니다.
-            </li>
-        </ul>
+    <section class="transportInfo">
+        <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+            <div class="transportInfoTitle">🚊&nbsp;지하철</div>
+            <ul>
+                <li>
+                    <span class="subway subwayLine1"></span>
+                    1호선 대방역
+                    <div class="transportInfoCaption">대방역 07번 마을버스, 서울해군호텔 하차</div>
+                </li>
+                <li>
+                    <span class="subway subwayLine7"></span>
+                    7호선 신풍역
+                    <div class="transportInfoCaption">3번 출구 6654번 버스, 서울해군호텔 하차</div>
+                </li>
+                <li>
+                    <span class="subway subwayLine7"></span>
+                    7호선 보라매역
+                    <div class="transportInfoCaption">5번 출구에서 도보로 약 15분 소요</div>
+                </li>
+                <li>
+                    <span class="subway subwayLineSinlim"></span>
+                    신림선 서울지방병무청역
+                    <div class="transportInfoCaption">2번 출구에서 도보로 약 15분 소요</div>
+                </li>
+            </ul>
+        </div>
+        <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+            <div class="transportInfoTitle">🚌&nbsp;버스</div>
+            <ul>
+                <li>강남중학교 버스정류장 하차 후 메가커피 방향으로 횡단보도 건너 직진 500m<br/>
+                </li>
+            </ul>
+            <div class="transportInfoTitle">🚌&nbsp;무료 셔틀버스</div>
+            <ul>
+                <li>
+                    예식 손님 전용 셔틀버스를 운영합니다.
+                </li>
+                <li>운영 장소
+                    <div class="transportInfoCaption">1호선 대방역3번출구 / 7호선 보라매역 5번출구</div>
+                </li>
+                <li>운행 간격
+                    <div class="transportInfoCaption">예식시간 1시간30분 전부터 10분-15분간격 운행</div>
+                </li>
+                <li>차량 정보
+                    <div class="transportInfoCaption">해군호텔W웨딩홀이라고 붙여놓은 셔틀 버스</div>
+                </li>
+            </ul>
+        </div>
+        <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+            <div class="transportInfoTitle">🅿️&nbsp;주차</div>
+            <ul>
+                <li>
+                    예식장 건물 내 2시간 무료 주차가 가능합니다.<br/>
+                    안내데스크에서 <b><u>주차권</u></b>을 수령할 수 있습니다.
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!-- 예식정보 -->
@@ -432,7 +444,7 @@
     </section>
 </div>
 
-<script>
+<script type="text/javascript">
     // 스크롤 애니메이션 init
     AOS.init();
 
@@ -559,10 +571,29 @@
 
     //  갤러리 더보기
     function handleClickGalleryMore() {
+        const moreButton = this.event.currentTarget;
+        moreButton.classList.add('hide');
+
         const hideImages = document.querySelectorAll('a.hide[data-fslightbox="gallery"]');
         hideImages.forEach(image => {
             image.classList.remove('hide');
-        })
+        });
+    }
+
+    // 네이버지도 init
+    var map = null;
+
+    function initMap() {
+        const LAT = 37.5037856;
+        const LNG = 126.9160236;
+        map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(LAT, LNG),
+            zoom: 15
+        });
+        new naver.maps.Marker({
+            position: new naver.maps.LatLng(LAT, LNG),
+            map: map
+        });
     }
 </script>
 </body>
