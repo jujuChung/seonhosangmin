@@ -1,5 +1,11 @@
 .greetingsDivider {
-    color: var(--pink1-text-color);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/loveIcon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
