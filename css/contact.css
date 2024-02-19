@@ -1,31 +1,59 @@
+.contactContainer {
+    display: inline-flex;
+    width: calc(50% - 40px);
+    flex-direction: column;
+    margin: 0 10px;
+}
+
 .contactImage {
     width: 100%;
-    height: 256px;
-    background: url('../images/contact.jpeg') no-repeat;
+    height: 170px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     margin-bottom: 10px;
+}
+
+.contactBridegroom {
+    background-image: url('../images/contact1.png');
+}
+
+.contactBride {
+    background-image: url('../images/contact2.png');
 }
 
 .contactInfo {
     padding-top: 10px;
     font-size: 16px;
+    color: darkgray;
 }
 
 .contactInfo > span {
     white-space: break-spaces;
 }
 
-.contactRelation {
+.contactTitle {
+    font-weight: 600;
+    color: slategray;
+    margin-bottom: 20px;
+}
+
+.contactSubtitle {
     font-size: var(--main-font-size);
-    color: darkgray;
+    font-weight: 500;
+    color: slategray;
+}
+
+.contactHashtag {
+    margin-top: 10px;
+    font-size: var(--main-font-size);
 }
 
 .contactButton {
     display: inline-block;
     border-radius: 20px;
-    border: 1px solid var(--main-border-color);
+    border: 1px solid var(--pink1-text-color);
     background: white;
     padding: 8px 40px;
     margin-top: 30px;

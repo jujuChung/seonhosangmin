@@ -1,9 +1,11 @@
 :root {
+    --max-width: 430px;
     --main-text-color: #5a5a5a;
     --secondary-text-color: #000000;
     --third-text-color: #2b2222;
     --red1-text-color: #c6472b;
     --red2-text-color: #ea7664;
+    --pink1-text-color: #ff648db3;
     --main-border-color: #5a5a5a;
     --secondary-border-color: #ebebeb;
     --third-border-color: #ddd;

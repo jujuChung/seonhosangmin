@@ -14,6 +14,7 @@
 .mapButton {
     border: none;
     width: calc(100vw / 3);
+    max-width: calc(var(--max-width) / 3);
     background: unset;
     margin: 10px 0;
     font-size: 12px;
