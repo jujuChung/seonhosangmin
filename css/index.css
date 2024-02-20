@@ -19,6 +19,7 @@
 }
 
 html, body {
+
     text-align: center;
     color: var(--main-text-color);
 
@@ -26,6 +27,7 @@ html, body {
     background: dimgray;
     margin: 0 !important;
     padding: 0 !important;
+    word-break: keep-all;
 }
 
 section {
@@ -40,4 +42,9 @@ h3 {
 
 button {
     color: var(--main-text-color);
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
 }
