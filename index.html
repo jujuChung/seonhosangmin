@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- og tag -->
     <meta property="og:title" content="상민·선호의 결혼식에 초대합니다"/>
-    <meta property="og:description" content="4월 13일 12시 30분 | 해군호텔w웨딩홀 본관 2층 노블레스홀"/>
+    <meta property="og:description" content="4월 13일(토) 오후 12시 30분 | 해군호텔w웨딩홀 본관 2층 노블레스홀"/>
     <meta property="og:image" content="./images/cover.jpg"/>
     <meta property="og:image:width" content="969"/>
     <meta property="og:image:height" content="1453"/>
@@ -295,6 +295,7 @@
 
     <!-- 지도 -->
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+        <div><span class="galleryDivider"></span></div>
         <h3>오시는 길</h3>
         <div class="locationTitle">해군호텔w웨딩홀 본관 2층 노블레스홀</div>
         <div class="locationCaption">서울특별시 영등포구 가마산로 538</div>
@@ -357,7 +358,6 @@
                 </li>
                 <li>차량 정보
                     <div class="transportInfoCaption">해군호텔W웨딩홀이 부착되어 있는 셔틀버스</div>
-                    <div class="transportShuttleImg"></div>
                 </li>
             </ul>
             <div class="transportInfoTitle">🚌&nbsp;신랑측 전세버스 대절 운행</div>
@@ -381,6 +381,7 @@
 
     <!-- 예식정보 -->
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+        <div><span class="galleryDivider"></span></div>
         <h3>예식정보 및 안내사항</h3>
         <div class="infoCard">
             <div class="infoCardTabs" onclick="handleClickInfoTab()">
@@ -402,7 +403,7 @@
                         <br/>
                         📢 포토부스에서 사진 촬영시 총 2장이 인쇄됩니다.
                         <br/> 한 장은 추억으로 가져가시고.
-                        <br/> 나머지 한 장은 포토방명록에 남겨주세요❤️
+                        <br/> 나머지 한 장은 포토방명록에 남겨주세요💛
                         <br/>📢 원하는 만큼 인화 가능하니 행복한 추억 많이 남겨가시면 좋겠습니다.
                     </div>
                     <div class="swiper-slide">
@@ -423,6 +424,7 @@
 
     <!-- 신랑신부, 혼주 정보 -->
     <section data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+        <div><span class="galleryDivider"></span></div>
         <h3>마음 전하실 곳</h3>
         <div class="accountText">
             참석이 어려우신 분들을 위해<br/>
@@ -511,12 +513,18 @@
     setInterval(() => {
         myConfetti({
             colors: [
-                "#ff0a54",
-                "#ff477e",
-                "#ff7096",
-                "#ff85a1",
-                "#fbb1bd",
-                "#f9bec7",
+            '#dace22',
+'#fff567',
+"#f8f29f",
+"#d4c821",
+"#f4e40d",
+"#b1a71e",
+                //"#ff0a54",
+                //"#ff477e",
+                //"#ff7096",
+                //"#ff85a1",
+                //"#fbb1bd",
+                //"#f9bec7",
             ],
             angle: 360,
             particleCount: 30,
@@ -719,12 +727,13 @@
         Kakao?.Share.sendDefault({
             objectType: 'feed',
             content: {
-                title: '상민·선호의 결혼식에 초대합니다',
+                title: '상민·선호의 결혼식에 초대합니다💛',
                 imageWidth: 969,
                 imageHeight: 1453,
                 imageUrl: 'https://seonhosangmin.github.io/wedding-card/images/cover.jpg',
                 link: {mobileWebUrl: LINK, webUrl: LINK},
-                description: '4월 13일 12시 30분\n해군호텔w웨딩홀 본관 2층 노블레스홀',
+                buttonTitle: '모바일 청첩장 보기',
+                description: '4월 13일(토) 오후 12시 30분\n해군호텔w웨딩홀 본관 2층 노블레스홀',
             }
         });
     }
