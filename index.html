@@ -720,13 +720,13 @@
     function shareKakaoTalk() {
         Kakao?.Share.sendDefault({
             objectType: 'feed',
+            buttonTitle: '모바일 청첩장 보기',
             content: {
                 title: '상민·선호의 결혼식에 초대합니다💛',
                 imageWidth: 969,
                 imageHeight: 1453,
                 imageUrl: 'https://seonhosangmin.github.io/wedding-card/images/cover.jpg',
                 link: {mobileWebUrl: LINK, webUrl: LINK},
-                buttonTitle: '모바일 청첩장 보기',
                 description: '4월 13일(토) 오후 12시 30분\n해군호텔w웨딩홀 본관 2층 노블레스홀',
             }
         });
